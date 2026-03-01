@@ -1,5 +1,3 @@
-/* global event */
-
 import { select } from 'd3-selection'
 import 'd3-transition'
 import 'd3-dispatch'
@@ -29,7 +27,7 @@ export function defaultFlamegraphTooltip () {
             .attr('class', 'd3-flame-graph-tip')
     }
 
-    tip.show = function (d) {
+    tip.show = function (event, d) {
         tooltip
             .style('display', 'block')
             .style('left', event.pageX + 5 + 'px')
