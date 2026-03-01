@@ -5,7 +5,7 @@ import { partition, hierarchy } from 'd3-hierarchy'
 import { scaleLinear } from 'd3-scale'
 import { easeCubic } from 'd3-ease'
 import { select as selectTransition } from 'd3-selection'
-import 'd3-transition/transition'
+import 'd3-transition'
 import { generateColorVector } from './colorUtils'
 import { calculateColor } from './colorScheme'
 
