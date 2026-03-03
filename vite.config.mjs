@@ -1,34 +1,43 @@
-import { defineConfig } from 'vite'
-import { resolve } from 'path'
-import path from 'path'
+import { defineConfig } from "vite";
+import { resolve } from "path";
+import path from "path";
+import { fileURLToPath } from "url";
+import { libInjectCss } from 'vite-plugin-lib-inject-css';
 
-const __dirname = path.dirname(import.meta.url)
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 export default defineConfig({
-  build: {
-    outDir: 'dist',
-    emptyOutDir: true,
-    lib: {
-      entry: resolve(__dirname, 'src/flamegraph.js'),
-      name: 'flamegraph',
-      formats: ['umd'],
-      fileName: 'd3-flamegraph'
+    root: "src",
+    publicDir: "../public",
+    build: {
+        outDir: "dist",
+        emptyOutDir: true,
+        copyPublicDir: false,
+        // Ensure cssCodeSplit is true (it's the default internally, but good to be explicit if needed)
+        cssCodeSplit: true,
+        lib: {
+            entry: resolve(__dirname, "lib/flamegraph.js"),
+            name: "flamegraph",
+            formats: ["umd", "es"],
+            fileName: (format) => `d3-flamegraph.${format}.js`,
+        },
+        rollupOptions: {
+            external: ["d3"],
+            output: {
+                format: "umd",
+                exports: "named",
+                globals: { d3: "d3" },
+            },
+        },
+        minify: false,
     },
-    rollupOptions: {
-      external: ['d3'],
-      output: {
-        format: 'umd',
-        name: 'flamegraph',
-        exports: 'named',
-        globals: { d3: 'd3' }
-      }
-    }
-  },
-  server: {
-    static: [
-      { dir: 'examples', base: '/' },
-      { dir: 'dist', base: '/' }
+    plugins: [
+        libInjectCss(),
     ],
-    port: 3000
-  }
-})
+    server: {
+        port: 3000,
+    },
+    optimizeDeps: {
+        include: ["d3"],
+    },
+});
