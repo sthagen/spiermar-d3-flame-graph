@@ -1,4 +1,6 @@
 declare module "d3-flame-graph" {
+    import type { HierarchyRectangularNode } from 'd3-hierarchy';
+
     export function flamegraph(): FlameGraph;
 
     export namespace tooltip {
@@ -16,6 +18,14 @@ declare module "d3-flame-graph" {
         name: string;
         value: number;
         children: StackFrame[];
+        libtype?: string;
+        delta?: number;
+    }
+
+    export interface FlamegraphTooltip<T = unknown> {
+        show(d: HierarchyRectangularNode<T>, node: SVGGElement): void;
+        hide(): void;
+        destroy?(): void;
     }
 
     type LabelHandler = (node: any) => string;
@@ -41,8 +51,8 @@ declare module "d3-flame-graph" {
         minFrameSize(): number;
         title(val: string): FlameGraph;
         title(): string;
-        tooltip(val: any): FlameGraph;
-        tooltip(): any;
+        tooltip(val: boolean | FlamegraphTooltip): FlameGraph;
+        tooltip(): boolean | FlamegraphTooltip;
         transitionDuration(val: number): FlameGraph;
         transitionDuration(): number;
         transitionEase(val: string): FlameGraph;
