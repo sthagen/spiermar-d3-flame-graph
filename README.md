@@ -76,7 +76,7 @@ And use it!
     <script type="text/javascript" src="node_modules/d3/d3.js"></script>
     <script
         type="text/javascript"
-        src="node_modules/d3-flame-graph/dist/d3-flamegraph.js"
+        src="node_modules/d3-flame-graph/dist/d3-flamegraph.umd.js"
     ></script>
     <script type="text/javascript">
         var chart = flamegraph().width(960);
