@@ -444,11 +444,6 @@ To build for production:
 $ npm run build
 ```
 
-### Template
-
-A standalone template with all JavaScript and CSS inlined gets built at `dist/templates/d3-flamegraph-base.html`.
-It contains a placeholder `/** @flamegraph_params **/` which needs to be replaced with the stacks in the format described in [Input Format](#input-format).
-
 ## License
 
 Copyright 2018 Martin Spier. All Rights Reserved.
