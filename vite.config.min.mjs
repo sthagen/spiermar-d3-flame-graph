@@ -35,6 +35,12 @@ export default defineConfig({
             output: {
                 format: "umd",
                 exports: "named",
+                assetFileNames: (assetInfo) => {
+                    if (assetInfo.name && assetInfo.name.endsWith(".css")) {
+                        return "d3-flamegraph.css";
+                    }
+                    return assetInfo.name;
+                },
                 globals: {
                     d3: "d3",
                     "d3-array": "d3",
