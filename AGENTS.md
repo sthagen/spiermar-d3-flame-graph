@@ -4,13 +4,13 @@ This document provides guidance for agentic coding agents working in this reposi
 
 ## Build Commands
 
-| Command              | Description                                |
-| -------------------- | ------------------------------------------ |
-| `npm run build`      | Production build using vite                |
-| `npm run dev`        | Start vite dev server in development mode  |
-| `npm run lint`       | Run ESLint on `src` and `test` directories |
-| `npm run test`       | Run Vitest tests                           |
-| `npm run test:watch` | Run Vitest in watch mode                   |
+| Command              | Description                                        |
+| -------------------- | -------------------------------------------------- |
+| `npm run build`      | Production build using vite (regular + minified)   |
+| `npm run dev`        | Start vite dev server in development mode          |
+| `npm run lint`       | Run ESLint on `lib`, `src`, and `test` directories |
+| `npm run test`       | Run Vitest tests                                   |
+| `npm run test:watch` | Run Vitest in watch mode                           |
 
 ### Running a Single Test
 
@@ -168,15 +168,19 @@ d3-flame-graph/
 │   └── index.js           # Main entry point
 ├── src/                   # Development/demo files
 │   ├── index.html         # Demo page
-│   ├── main.js            # Demo entry point
-│   └── dist/              # Built output
+│   └── main.js            # Demo entry point
 ├── test/
 │   ├── flamegraph.js      # Main tests
 │   ├── colorMapper.js     # Color mapper tests
 │   └── edgeCases.js       # Edge case tests
+├── examples/              # Example HTML files
+├── docs/                  # Design documents and plans
+├── public/                # Static assets
 ├── dist/                  # Built distribution files
+├── .github/               # GitHub workflows
 ├── package.json           # Dependencies and scripts
 ├── vite.config.mjs        # Vite configuration
+├── vite.config.min.mjs    # Minified build configuration
 ├── vitest.config.js       # Vitest configuration
 └── eslint.config.mjs      # ESLint configuration
 ```
