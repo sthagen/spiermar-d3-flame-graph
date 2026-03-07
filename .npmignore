@@ -1,9 +1,8 @@
 dist/*.zip
 test/
-examples/
+demo/
 .github/
-rollup.config.js
-Gulpfile.js
-.travis.yml
-.eslintrc.json
+.worktrees/
 .gitignore
+.DS_Store
+npm-debug.log
