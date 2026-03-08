@@ -24,11 +24,6 @@ Just reference the CDN hosted CSS and JS files!
 
 ```html
 <head>
-    <link
-        rel="stylesheet"
-        type="text/css"
-        href="https://cdn.jsdelivr.net/npm/d3-flame-graph@5.0.0/dist/d3-flamegraph.css"
-    />
 </head>
 <body>
     <div id="chart"></div>
@@ -65,11 +60,6 @@ And use it!
 
 ```html
 <head>
-    <link
-        rel="stylesheet"
-        type="text/css"
-        href="node_modules/d3-flame-graph/dist/d3-flamegraph.css"
-    />
 </head>
 <body>
     <div id="chart"></div>
