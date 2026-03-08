@@ -24,7 +24,7 @@
         "test": "vitest run",
         "test:watch": "vitest",
         "prepare": "npm run build",
-        "postpublish": "zip -j dist/d3-flamegraph.zip -- LICENSE README.md dist/d3-flamegraph.umd.js dist/d3-flamegraph.es.js dist/d3-flamegraph.umd.min.js dist/d3-flamegraph.es.min.js dist/d3-flamegraph.css"
+        "postpublish": "zip -j dist/d3-flamegraph.zip -- LICENSE README.md dist/d3-flamegraph.umd.js dist/d3-flamegraph.es.js dist/d3-flamegraph.umd.min.js dist/d3-flamegraph.es.min.js dist/d3-flamegraph.css dist/d3-flamegraph.min.css"
     },
     "repository": {
         "type": "git",
