@@ -37,7 +37,7 @@ export default defineConfig({
                 exports: "named",
                 assetFileNames: (assetInfo) => {
                     if (assetInfo.name && assetInfo.name.endsWith(".css")) {
-                        return "d3-flamegraph.css";
+                        return "d3-flamegraph.min.css";
                     }
                     return assetInfo.name;
                 },
